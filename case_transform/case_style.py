@@ -47,7 +47,7 @@ class CaseStyle(Enum):
         re.compile(r'''
             # snake_case
                 ([a-z][a-z\d]*)   # first part before `_` starting with lowercase letter
-            (?:_([a-z][a-z\d]*))  # rest parts
+            (?:_([a-z][a-z\d]*))* # rest parts
             ''',
             re.X,
         ),
@@ -58,7 +58,7 @@ class CaseStyle(Enum):
         re.compile(r'''
             # UPPER_SNAKE_CASE
                 ([A-Z][A-Z\d]*)   # first part before `_` starting with uppercase letter
-            (?:_([A-Z][A-Z\d]*))  # rest parts
+            (?:_([A-Z][A-Z\d]*))* # rest parts
             ''',
             re.X,
         ),
@@ -69,7 +69,7 @@ class CaseStyle(Enum):
         re.compile(r'''
             # kebab-case
                 ([a-z][a-z\d]*)   # first part before `-` starting with lowercase letter
-            (?:-([a-z][a-z\d]*))  # rest parts
+            (?:-([a-z][a-z\d]*))* # rest parts
             ''',
             re.X,
         ),
@@ -80,7 +80,7 @@ class CaseStyle(Enum):
         re.compile(r'''
             # UPPER-KEBAB-CASE
                 ([A-Z][A-Z\d]*)   # first part before `-` starting with uppercase letter
-            (?:-([A-Z][A-Z\d]*))  # rest parts
+            (?:-([A-Z][A-Z\d]*))* # rest parts
             ''',
             re.X,
         ),
