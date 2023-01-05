@@ -104,7 +104,7 @@ class CaseStyle(Enum):
 
         result = self.value.pattern.fullmatch(identifier)
         if result is None:
-            raise ValueError(f'identifier "{identifier}" doesnt match {self}')
+            raise ValueError(f'Identifier "{identifier}" doesnt match {self}.')
 
         return result.groups()
 
