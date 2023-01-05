@@ -18,7 +18,7 @@ import re
 @dataclass(frozen=True)
 class CaseStyleItem:
     pattern: re.Pattern
-    transform: Callable[..., str]
+    converter: Callable[..., str]
 
 
 class CaseStyle(Enum):
@@ -112,4 +112,4 @@ class CaseStyle(Enum):
         if parts == tuple():
             return ''
 
-        return self.value.transform(*parts)
+        return self.value.converter(*parts)
